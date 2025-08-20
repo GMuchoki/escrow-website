@@ -1,25 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(215, 218, 218);
+  padding: 20px;
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo-container img {
-    height: 30px;
-    width: 30px;
+  height: 30px;
+  width: 30px;
 }
 
 .logo-container h2 {
-    color: #1D2530;
+  color: #1D2530;
 }
 
+/* Primary nav */
 .ul-navlist {
-    display: flex;
+  display: flex;
 }
 
 .ul-navlist li {
@@ -29,6 +38,154 @@ header {
 }
 
 .ul-navlist a {
-    text-decoration: none;
-    margin: 10px;
+  text-decoration: none;
+  margin: 10px;
+  color: rgba(29, 37, 48, 0.6);
+}
+
+/* Global list reset (affects all uls in this header) */
+ul, ul ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Top-level menu items inline */
+ul > li {
+  display: inline-block;
+  position: relative;
+  margin-right: 20px;
+}
+
+/* Dropdown caret */
+.dropdown::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #666;
+  border-bottom: 2px solid #666;
+  transform: rotate(45deg);
+  margin-left: 8px;
+  margin-bottom: 2px;
+}
+
+/* Dropdown (hidden by default) */
+ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  min-width: 180px;
+  padding: 8px 0;
+}
+
+/* Show dropdown on hover */
+ul li:hover > ul {
+  display: block;
+}
+
+/* Dropdown items */
+ul li ul li a {
+  display: block;
+  padding: 8px 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+ul li ul li a:hover {
+  background: #F59794;
+}
+
+
+.headerbtns-container button{
+    margin: 5px;
+    padding: 10px;
+}
+
+.primary {
+    background-color: white;
+    color: rgb(29, 37, 48);
+    border: none;
+    border-radius: 5px;
+}
+
+.primary:hover {
+    background: #F59794;
+}
+
+.secondary {
+    background-color: rgb(6, 34, 70);
+    color: rgb(248, 250, 252);
+    border: none;
+    border-radius: 5px;
+}
+
+
+.hero-container {
+  background: linear-gradient(
+    to right,
+    #062246,   /* dark navy blue */
+    #16a249    /* green */
+  );
+  display: flex;
+  text-align: center;
+  color: white; /* optional: makes text visible */
+  padding: 80px 0; /* optional: spacing */
+  justify-content: center;
+
+  gap: 5px;
+}
+
+
+.hero-text {
+    width: 50%;
+    /* border: solid; */
+}
+
+.hero-text span {
+    color: hsl(142 76% 36%);
+}
+
+.hero-image {
+    width: 50%;
+    /* border: solid; */
+}
+
+.hero-container img {
+    width: 500px;
+    border-radius: 20px;
+    display: block;
+}
+
+.card-1 {
+    display: flex;
+    justify-content: center;
+}
+
+.card-2 {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-btns button{
+    margin: 5px;
+    padding: 10px;
+}
+
+.start {
+    background-color: hsl(142 76% 36%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.learn {
+    background-color: hsl(0 0% 100%);
+    color: rgb(6, 34, 70);
+    border: none;
+    border-radius: 5px;
 }
